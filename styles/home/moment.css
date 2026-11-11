@@ -1,0 +1,30 @@
+/* ---------- 12. Every moment ---------- */
+.moment{position:relative;z-index:1;padding-top:calc(var(--vw)*11)}
+.moment .wrap{display:grid;grid-template-columns:1fr calc(var(--vw)*43);gap:calc(var(--vw)*3);align-items:center}
+.moment__text{display:flex;flex-direction:column;gap:calc(var(--vw)*1.4);padding-top:calc(var(--vw)*4)}
+.moment__text .h2{margin-bottom:calc(var(--vw)*1.4)}
+.moment__text .body-s{max-width:calc(var(--vw)*40)}
+.moment__list{list-style:none;margin:calc(var(--vw)*.4) 0 0;padding:0;display:flex;flex-direction:column;gap:calc(var(--vw)*1.6)}
+.moment__list li{position:relative;padding-left:18px}
+.moment__list li::before{content:"";position:absolute;left:4px;top:.62em;width:4px;height:4px;border-radius:50%;background:var(--ink)}
+.moment__text .btn-arrow{margin-top:calc(var(--vw)*1.4)}
+.moment__circles{position:relative;height:calc(var(--vw)*43)}
+.moment__circles .ink{position:absolute}
+.moment__c1{width:calc(var(--vw)*20.6);right:calc(var(--vw)*3.5);top:0}
+.moment__c2{width:calc(var(--vw)*24.8);left:0;top:calc(var(--vw)*17)}
+.moment__c3{width:calc(var(--vw)*16.6);right:calc(var(--vw)*.4);top:calc(var(--vw)*23.2)}
+
+/* tablet + phone: text first, the three photos underneath in a fixed-ratio box */
+@media (max-width:900px){
+  .moment{padding-top:72px}
+  .moment .wrap{grid-template-columns:1fr;gap:28px}
+  .moment__text{gap:12px;padding-top:0}
+  .moment__text .h2{margin-bottom:6px}
+  .moment__text .body-s{max-width:none}
+  .moment__text .btn-arrow{margin-top:12px}
+  .moment__list{gap:10px}
+  .moment__circles{width:min(100%,560px);height:auto;aspect-ratio:1/1.02;margin:0 auto}
+  .moment__c1{width:46%;right:2%;top:0}
+  .moment__c2{width:52%;left:0;top:24%}
+  .moment__c3{width:36%;right:4%;top:55%}
+}

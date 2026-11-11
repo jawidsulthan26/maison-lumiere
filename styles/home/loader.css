@@ -1,0 +1,16 @@
+/* ---------- 6. Loader ---------- */
+#loader{position:fixed;inset:0;z-index:200;background:var(--cream-1);display:grid;place-items:center}
+#loader-gl{position:absolute;inset:0;width:100%;height:100%;display:block}
+.loader__ui{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:66vh;transition:opacity .5s}
+.loader__count{font-family:var(--font-display);font-size:28px;color:var(--ink);letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.loader__brand{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--muted)}
+/* CSS vial — used only when WebGL is unavailable */
+.loader__bottle{display:none;position:absolute;left:50%;top:50%;width:min(30vh,60vw);transform:translate(-50%,-48%)}
+.loader__bottle img{width:100%;display:block;filter:grayscale(1) brightness(1.12);opacity:.65}
+.loader__bottle .loader__fill{position:absolute;inset:0;opacity:1;filter:sepia(1) saturate(2.4) hue-rotate(-12deg) brightness(.95);clip-path:inset(calc((1 - var(--p))*100%) 0 0 0)}
+html.no-webgl .loader__bottle{display:block}
+#loader-cap,[hidden]{display:none!important}
+.loader__vial{display:none;position:absolute;left:50%;top:50%;width:64px;height:150px;transform:translate(-50%,-60%);border:1px solid rgba(35,26,21,.35);border-radius:26px 26px 30px 30px;overflow:hidden}
+.loader__vial::before{content:"";position:absolute;left:50%;top:-1px;width:24px;height:16px;transform:translateX(-50%);background:var(--cream-1);border:1px solid rgba(35,26,21,.35);border-top:0}
+.loader__vial i{position:absolute;left:0;right:0;bottom:0;height:calc(var(--p,0)*100%);background:linear-gradient(180deg,#E9A85E,#B8642A);transition:height .3s}
+html.no-webgl .loader__vial{display:block}

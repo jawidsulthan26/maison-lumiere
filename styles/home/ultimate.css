@@ -1,0 +1,27 @@
+/* ---------- 11. Ultimate carousel ---------- */
+.ultimate{position:relative;z-index:1;padding-top:calc(var(--vw)*8.4)}
+.carousel{position:relative;margin-top:calc(var(--vw)*3.6)}
+.carousel__stage{position:relative;height:calc(var(--vw)*40);touch-action:pan-y}
+.slide{position:absolute;left:50%;top:0;width:calc(var(--vw)*19.6);margin-left:calc(var(--vw)*-9.8);display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;will-change:transform}
+.slide .card__arch{top:calc(var(--vw)*3)}
+.slide__media{position:relative;z-index:1;width:62%;aspect-ratio:207/263}
+.slide__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 100%}
+.slide{--s:1}
+.slide .card__meta{transform:scale(calc(1 / var(--s)));transform-origin:50% 0}
+.slide .card__meta{padding-bottom:calc(var(--vw)*3.2)}
+.carousel__nav{display:flex;justify-content:center;gap:2px;margin-top:calc(var(--vw)*1)}
+.carousel__btn{width:clamp(34px,calc(var(--vw)*4.6),62px);height:clamp(28px,calc(var(--vw)*3.2),44px);display:grid;place-items:center}
+.carousel__btn svg{width:100%;height:100%;stroke:var(--copper);fill:none;stroke-width:1.1;transition:transform .6s var(--ease-out)}
+.carousel__btn:hover svg{transform:translateX(-4px)}
+.carousel__btn--next:hover svg{transform:translateX(4px)}
+.carousel__dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.carousel__dots i{width:5px;height:5px;border-radius:50%;background:var(--peach-deep);transition:.5s var(--ease-out)}
+.carousel__dots i.is-on{background:var(--copper);width:18px;border-radius:3px}
+
+@media (max-width:767px){
+  .ultimate{padding-top:72px}
+  .carousel{margin-top:30px}
+  .carousel__stage{height:118vw}
+  .slide{width:46vw;margin-left:-23vw}
+  .slide .card__arch{top:20px}
+}

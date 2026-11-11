@@ -1,0 +1,36 @@
+/* ---------- 2. Reset / base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-weight:400;
+  color:var(--text);
+  /* page background — base + four soft corner washes, positioned over the full page height */
+  background-color:#FCF8F4;
+  background-image:
+    radial-gradient(1200px 900px at 0% 0%, #FBE3D1 0%, rgba(251,227,209,0) 60%),
+    radial-gradient(900px 700px at 100% 35%, rgba(250,228,212,.55), transparent 65%),
+    radial-gradient(1000px 800px at 0% 75%, rgba(250,230,216,.5), transparent 65%),
+    radial-gradient(1000px 800px at 100% 95%, rgba(250,228,212,.55), transparent 65%);
+  background-repeat:no-repeat;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.is-loading{overflow:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+h1,h2,h3,p{margin:0}
+::selection{background:var(--copper);color:#fff}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:1px solid var(--copper);outline-offset:4px;border-radius:4px}
+
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);position:relative}
+
+/* nothing may ever widen the page sideways */
+html,body{overflow-x:clip}

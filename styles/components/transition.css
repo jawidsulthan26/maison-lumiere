@@ -1,0 +1,3 @@
+/* ---------- Page transition: each new page is revealed like an ink drop from where you clicked ---------- */
+.page{position:relative;min-height:100vh}
+.page.is-entering{will-change:clip-path}

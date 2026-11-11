@@ -1,0 +1,8 @@
+/* ---------- WebGL layers ---------- */
+.hero__pool{position:absolute;left:1%;right:14%;top:80%;height:58%;pointer-events:none;display:none}
+html.gl-ready .hero__pool{display:block}
+#stage-gl{position:fixed;inset:0;width:100vw;height:100vh;z-index:6;pointer-events:none;display:block}
+html.no-webgl #stage-gl, html.no-webgl #hero-gl{display:none}
+
+/* elements drawn by WebGL keep their layout box but hide their pixels */
+html.gl-ready [data-gl]{opacity:0!important}

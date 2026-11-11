@@ -1,0 +1,18 @@
+/* ---------- 4. Buttons: text + circular outline arrow ---------- */
+.btn-arrow{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:clamp(11px,calc(var(--vw)*.95),14px);font-weight:400;color:var(--ink);letter-spacing:.01em;
+}
+.btn-arrow__circle{
+  position:relative;width:clamp(30px,calc(var(--vw)*2.8),42px);aspect-ratio:1;border-radius:50%;
+  border:1px solid var(--copper);display:grid;place-items:center;overflow:hidden;
+  transition:background-color .5s var(--ease-out),border-color .5s var(--ease-out);
+}
+.btn-arrow__circle svg{width:44%;height:44%;stroke:var(--copper);fill:none;stroke-width:1.2;transition:transform .6s var(--ease-out),stroke .4s}
+.btn-arrow__circle svg+svg{position:absolute;transform:translate(-150%,150%)}
+.btn-arrow:hover .btn-arrow__circle{background:var(--copper)}
+.btn-arrow:hover .btn-arrow__circle svg{stroke:#fff;transform:translate(150%,-150%)}
+.btn-arrow:hover .btn-arrow__circle svg+svg{transform:translate(0,0)}
+.btn-arrow__label{position:relative}
+.btn-arrow__label::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:var(--copper);transform:scaleX(0);transform-origin:right;transition:transform .6s var(--ease-out)}
+.btn-arrow:hover .btn-arrow__label::after{transform:scaleX(1);transform-origin:left}

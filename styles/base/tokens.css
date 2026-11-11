@@ -1,0 +1,33 @@
+/* ---------- 1. Tokens ---------- */
+:root{
+  /* colours */
+  --cream-1:#FBF3EC;
+  --cream-2:#F6E6DA;
+  --cream-3:#F9EEE5;
+  --peach:#F3D7C4;
+  --peach-soft:rgba(243,215,196,.55);
+  --peach-deep:#ECC4A8;
+  --copper:#C8875A;
+  --copper-dark:#A96A40;
+  --ink:#1E1915;          /* headings */
+  --text:#3E3530;         /* body */
+  --muted:#9B8C83;
+  --line:rgba(200,135,90,.45);
+
+  /* type */
+  --font-display:'Italiana', serif;
+  --font-body:'Lato', sans-serif;
+
+  /* fluid unit: 1% of the layout width, capped so ultra-wide screens stay composed */
+  --vw:min(1vw, 15.5px);
+  --gutter:calc(var(--vw)*5.7);
+  --maxw:1550px;
+
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-io:cubic-bezier(.77,0,.18,1);
+}
+
+/* fluid unit tracks the viewport below desktop widths */
+@media (max-width:1024px){ :root{--vw:1vw} }
+@media (max-width:767px){ :root{--vw:1vw;--gutter:20px} }
+@media (max-width:380px){ :root{--gutter:16px} }

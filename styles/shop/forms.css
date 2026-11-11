@@ -1,0 +1,15 @@
+/* text fields */
+.field{position:relative}
+.field input,.field select,.field textarea{width:100%;height:56px;border:1px solid #E6D4C5;border-radius:14px;background:rgba(255,255,255,.7);padding:22px 16px 6px;font:15px var(--font-body);color:var(--ink);outline:none;transition:border-color .3s,box-shadow .3s;appearance:none;-webkit-appearance:none}
+.field textarea{height:92px;resize:vertical;padding-top:26px}
+.field label{position:absolute;left:17px;top:18px;font-size:14px;color:var(--muted);pointer-events:none;transition:.25s var(--ease-out);transform-origin:left top}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--copper);box-shadow:0 0 0 4px rgba(200,135,90,.12)}
+.field input:focus+label,.field input:not(:placeholder-shown)+label,.field textarea:focus+label,.field textarea:not(:placeholder-shown)+label,.field select+label{transform:translateY(-10px) scale(.78);color:var(--copper)}
+.field .err{display:none;font-size:12px;color:#B5472F;margin:6px 4px 0}
+.field.is-err input,.field.is-err select{border-color:#C9573F;background:#FFF6F3}
+.field.is-err .err{display:block}
+.field__hint{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--muted)}
+.field select{padding-top:22px;background-image:linear-gradient(45deg,transparent 50%,var(--copper) 50%),linear-gradient(135deg,var(--copper) 50%,transparent 50%);background-position:calc(100% - 22px) 26px,calc(100% - 16px) 26px;background-size:6px 6px;background-repeat:no-repeat}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fgrid .span2{grid-column:1/-1}
+.fgrid3{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px}

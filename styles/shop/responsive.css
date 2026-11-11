@@ -1,0 +1,55 @@
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .co-split{grid-template-columns:minmax(0,1fr) 340px}
+  .pd__perks{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .pd{grid-template-columns:1fr;min-height:0;gap:10px}
+  .pd__stage{height:min(62vh,560px)}
+  .pd__info{max-width:none}
+  .co-split{grid-template-columns:1fr}
+  .sticky{position:static}
+  .done-grid{grid-template-columns:1fr}
+  .summary-first{order:-1}
+}
+@media (max-width:600px){
+  .view__bar{padding:10px 16px;grid-template-columns:auto 1fr auto}
+  .view__back span{display:none}
+  .view__brand{font-size:14px;letter-spacing:.16em}
+  .view__actions{gap:4px}
+}
+@media (max-width:380px){
+  .view__bar{gap:6px;padding:8px 10px}
+  .view__brand{font-size:12px;letter-spacing:.1em}
+  .view__actions{gap:0}
+  .view__actions .icon-btn{width:34px;height:34px}
+  .view__back{gap:0}
+  .tiles{gap:18px 8px}
+  .pd__buy .icon-btn{width:48px!important;height:48px!important}
+  .qty button{width:38px}
+  .shop-wrap{padding:0 16px}
+  .tiles{grid-template-columns:repeat(2,1fr);gap:22px 12px}
+  .tile__name{font-size:11.5px}
+  .pd__stage{height:48vh}
+  .pd__buy{grid-template-columns:auto 1fr}
+  .pd__buy .btn-ghost{grid-column:1/-1}
+  .pd__perks{grid-template-columns:1fr}
+  .row-2,.fgrid,.fgrid3{grid-template-columns:1fr}
+  .btn-solid,.btn-ghost{height:52px;padding:0 22px;font-size:12px}
+  .line{grid-template-columns:72px 1fr;gap:12px}
+  .line__img{width:72px;height:88px}
+  .line__right{grid-column:2;flex-direction:row;justify-content:space-between;align-items:center}
+  .line--mini{grid-template-columns:56px 1fr auto}
+  .line--mini .line__right{grid-column:auto;flex-direction:column}
+  .steps .step span{font-size:9px;letter-spacing:.08em}
+  .choice{padding:14px;gap:12px}
+  .co-actions{flex-direction:column-reverse;align-items:stretch}
+  .co-actions .btn-solid{width:100%}
+  .track div{font-size:10.5px}
+  .otp__inputs input{width:40px;height:50px}
+  .upi-qr{grid-template-columns:1fr;justify-items:center;text-align:center}
+}
+
+/* applied when the system asks for reduced motion (unless the visitor switches motion on) */
+html.rm *,html.rm *::before,html.rm *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+html.rm .grain{animation:none}

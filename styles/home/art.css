@@ -1,0 +1,23 @@
+/* ---------- 10. Art of fine fragrance ---------- */
+.art{position:relative;z-index:1;padding-top:calc(var(--vw)*7)}
+.art .wrap{display:grid;grid-template-columns:calc(var(--vw)*38.5) 1fr;gap:calc(var(--vw)*5.8);align-items:center}
+.art__media{width:100%;aspect-ratio:1673/1793}
+.art__text{display:flex;flex-direction:column;gap:calc(var(--vw)*1.5);padding-right:calc(var(--vw)*1)}
+.art__text .h2{margin-bottom:calc(var(--vw)*1.7);line-height:1.12}
+.art__text .body-s{max-width:calc(var(--vw)*43)}
+.art__text .btn-arrow{margin-top:calc(var(--vw)*1.8)}
+
+/* ink-mask photos (JS replaces the <img> with an SVG mask) */
+.ink{position:relative;display:block}
+.ink img,.ink svg{width:100%;height:100%;display:block}
+.ink img{object-fit:cover;clip-path:ellipse(49.2% 49.2% at 50% 50%)}
+
+@media (max-width:900px){
+  .art{padding-top:64px}
+  .art .wrap{grid-template-columns:1fr;gap:34px}
+  .art__media{width:min(82%,460px);margin:0 auto}
+  .art__text{gap:12px;padding-right:0}
+  .art__text .h2{margin-bottom:6px}
+  .art__text .body-s{max-width:none}
+  .art__text .btn-arrow{margin-top:12px}
+}

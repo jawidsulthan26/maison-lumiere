@@ -1,0 +1,45 @@
+/* ---------- 8. Hero ---------- */
+.hero{position:relative;z-index:1;overflow:clip}
+main,.footer{position:relative;z-index:1}
+#hero-gl{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none}
+.hero__inner{position:relative;max-width:var(--maxw);margin:0 auto;height:calc(var(--vw)*64);min-height:560px}
+.hero__title{
+  position:absolute;left:0;right:0;top:calc(var(--vw)*14.6);z-index:2;
+  text-align:center;white-space:nowrap;
+  font-size:calc(var(--vw)*12.1);line-height:.9;letter-spacing:-.005em;
+  pointer-events:none;
+}
+.hero__title .char{display:inline-block;position:relative;will-change:transform,filter,opacity}
+/* 5. mini bottles living inside the letters (sized in em, so they scale with the title) */
+.title-mini{position:absolute;pointer-events:none;width:auto;max-width:none;animation:floatY 6s ease-in-out infinite}
+.title-mini--e{height:.265em;left:.2em;bottom:.12em}
+.title-mini--g{height:.294em;left:.24em;top:.31em;transform-origin:50% 100%;animation-delay:-2.5s}
+.hero__bottle{position:absolute;z-index:3;left:calc(var(--vw)*16);width:calc(var(--vw)*68.5);top:calc(var(--vw)*24.2);pointer-events:none}
+.hero__bottle img{width:100%}
+.hero__minis{position:absolute;z-index:5;left:calc(var(--vw)*6.6);top:calc(var(--vw)*40.2);display:flex;flex-direction:column;gap:calc(var(--vw)*2.2)}
+.mini{display:flex;flex-direction:column;align-items:center;gap:calc(var(--vw)*.8);position:relative}
+.mini img{width:calc(var(--vw)*4.2);min-width:38px;transition:transform .7s var(--ease-out),filter .5s}
+.mini span{font-size:clamp(9px,calc(var(--vw)*.82),12px);letter-spacing:.14em;color:var(--ink);font-weight:400;text-transform:uppercase}
+.mini span{position:relative}
+.mini span::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--copper);transform:scaleX(0);transition:transform .7s var(--ease-out)}
+.mini.is-active span::after{transform:scaleX(1)}
+.mini:hover img{transform:translateY(-4px) rotate(-4deg)}
+.mini.is-active span{color:var(--copper)}
+.hero__aside{position:absolute;z-index:5;right:calc(var(--vw)*5.4);top:calc(var(--vw)*48.4);width:max(calc(var(--vw)*18),190px);display:flex;flex-direction:column;gap:calc(var(--vw)*1.9)}
+.hero__aside p{font-size:clamp(10.5px,calc(var(--vw)*.98),14px);line-height:1.6;font-weight:400;color:var(--text)}
+.hero__scroll{position:absolute;z-index:5;left:50%;bottom:calc(var(--vw)*1.2);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.hero__scroll i{width:1px;height:34px;background:linear-gradient(var(--copper),transparent);animation:scrollLine 2.2s var(--ease-io) infinite;transform-origin:top}
+@keyframes scrollLine{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* tablet + phone: the hero stacks — title, bottle, Elan/Noir, tagline */
+@media (max-width:900px){
+  .hero__inner{height:auto;min-height:0;padding:clamp(88px,14vw,120px) 0 48px;display:flex;flex-direction:column;align-items:center}
+  .hero__title{position:relative;top:auto;order:1}
+  .hero__bottle{position:relative;left:auto;top:auto;width:min(112vw,860px);margin:-2vw 0 0;order:2}
+  .hero__minis{position:relative;left:auto;top:auto;flex-direction:row;gap:32px;order:3;margin-top:clamp(40px,7vw,64px)}
+  .hero__aside{position:relative;right:auto;top:auto;width:auto;max-width:340px;order:4;align-items:center;text-align:center;margin-top:28px}
+  .hero__aside p{white-space:normal}
+  .hero__scroll{display:none}
+  .hero__pool{left:10%;right:10%;top:78%;height:46%}
+}
+@media (max-width:767px){ .mini img{width:44px} }

@@ -1,0 +1,7 @@
+/* ---------- 15. Fallback CSS animations (no WebGL) ---------- */
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+html.no-webgl .hero__bottle img{animation:floatY 6s ease-in-out infinite}
+html.no-webgl .essence__bottle img{animation:floatY 7s ease-in-out infinite}
+html.no-webgl .card:hover .card__img{transform:translateY(-10px) scale(1.04) rotateX(var(--rx)) rotateY(var(--ry))}
+html.no-webgl .hero__bottle img.is-noir{filter:sepia(.35) saturate(.45) brightness(.6) contrast(1.35)}
+html.no-webgl .hero__bottle img{transition:filter 1s var(--ease-io)}

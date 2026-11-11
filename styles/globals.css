@@ -1,0 +1,35 @@
+/* =========================================================================
+   Global stylesheet — imports every partial in cascade order.
+   base → components → home sections → shop pages
+   ========================================================================= */
+@import './base/tokens.css';
+@import './base/reset.css';
+@import './base/typography.css';
+
+@import './components/buttons.css';
+@import './components/cursor-grain.css';
+@import './components/nav.css';
+@import './components/transition.css';
+
+@import './home/background.css';
+@import './home/webgl.css';
+@import './home/loader.css';
+@import './home/hero.css';
+@import './home/signature.css';
+@import './home/art.css';
+@import './home/ultimate.css';
+@import './home/moment.css';
+@import './home/essence.css';
+@import './home/footer.css';
+@import './home/fallbacks.css';
+
+@import './shop/layout.css';
+@import './shop/tiles.css';
+@import './shop/product.css';
+@import './shop/forms.css';
+@import './shop/drawer.css';
+@import './shop/checkout.css';
+@import './shop/payment.css';
+@import './shop/order.css';
+@import './shop/overlays.css';
+@import './shop/responsive.css';

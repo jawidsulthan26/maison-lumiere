@@ -1,0 +1,44 @@
+/* =========================================================================
+   20. SHOP FLOW — shop, product, cart, wishlist, checkout, confirmation
+   ========================================================================= */
+.view{position:relative;min-height:100vh;min-height:100svh;
+  background-color:#FCF8F4;
+  background-image:radial-gradient(900px 700px at 0% 0%,#FBE3D1 0%,rgba(251,227,209,0) 60%),radial-gradient(900px 700px at 100% 60%,rgba(250,228,212,.55),transparent 65%)}
+.view[hidden],.drawer[hidden],.veil[hidden],.search[hidden],.otp[hidden]{display:none!important}
+.view__bar{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:14px var(--gutter);
+  background:rgba(252,248,244,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.view__back{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);justify-self:start}
+.view__back svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.4;transition:transform .5s var(--ease-out)}
+.view__back:hover svg{transform:translateX(-4px)}
+.view__brand{font-family:var(--font-display);font-size:18px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);text-align:center;white-space:nowrap}
+.view__actions{display:flex;gap:18px;justify-self:end;align-items:center}
+.icon-btn{position:relative;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:background-color .3s}
+.icon-btn:hover{background:rgba(200,135,90,.1)}
+.icon-btn svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.4}
+.count-badge{position:absolute;top:2px;right:0;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--copper);color:#fff;font-size:9.5px;line-height:16px;text-align:center;font-weight:700;transform:scale(0);transition:transform .5s var(--ease-out)}
+.count-badge.is-on{transform:scale(1)}
+.shop-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.page-head{padding:clamp(28px,5vw,64px) 0 clamp(20px,3vw,40px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.page-head h1{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(32px,5vw,64px);color:var(--ink);line-height:1.05}
+.page-head p{max-width:520px}
+.eyebrow-c{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--copper)}
+.crumbs{font-size:12px;letter-spacing:.06em;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.crumbs a:hover{color:var(--copper)}
+
+/* buttons */
+.btn-solid,.btn-ghost{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:999px;
+  font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;overflow:hidden;isolation:isolate;transition:color .5s,border-color .4s,opacity .3s;white-space:nowrap}
+.btn-solid{background:#1E1915;color:#fff}
+.btn-solid::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#E2A777,#B26E40);transform:translateY(101%);border-radius:inherit;transition:transform .7s var(--ease-out)}
+.btn-solid:hover::before{transform:translateY(0)}
+.btn-ghost{border:1px solid rgba(30,25,21,.25);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--copper);color:var(--copper)}
+.btn-solid[disabled],.btn-ghost[disabled]{opacity:.45;pointer-events:none}
+.btn-solid .btn-fill{position:absolute;left:0;top:0;bottom:0;width:0;z-index:-1;background:linear-gradient(90deg,#B26E40,#E2A777)}
+.btn-block{width:100%}
+.link-btn{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--copper);border-bottom:1px solid rgba(200,135,90,.4);padding-bottom:2px}
+.link-btn:hover{border-color:var(--copper)}
+
+/* the Pay button keeps full strength while the liquid fills it */
+.btn-solid.is-busy,.btn-solid[disabled]:has(.btn-fill){opacity:1}
+.icon-btn[disabled],.qty button[disabled]{opacity:.35;cursor:default}

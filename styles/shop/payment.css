@@ -1,0 +1,46 @@
+/* payment tabs */
+.tabs{position:relative;display:grid;grid-template-columns:repeat(3,1fr);padding:5px;border-radius:999px;background:#F3E6DB}
+.tabs button{position:relative;z-index:1;height:44px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .4s}
+.tabs button.is-on{color:var(--ink)}
+.tabs__ink{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);border-radius:999px;background:#fff;box-shadow:0 4px 14px rgba(90,60,40,.1);transition:transform .6s var(--ease-out)}
+.pay-pane{display:none;flex-direction:column;gap:16px}
+.pay-pane.is-on{display:flex}
+.demo-note{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#FFF5E9;border:1px dashed rgba(200,135,90,.5);font-size:12.5px;color:var(--text);line-height:1.5}
+.demo-note b{color:var(--ink)}
+.demo-note svg{flex:0 0 18px;width:18px;height:18px;stroke:var(--copper);fill:none;stroke-width:1.4}
+.demo-note button{color:var(--copper);font-weight:700;text-decoration:underline}
+
+/* 3D card preview */
+.cc{width:min(360px,100%);aspect-ratio:1.586;perspective:1200px;margin:4px auto 6px}
+.cc__inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s var(--ease-out)}
+.cc.is-flip .cc__inner{transform:rotateY(180deg)}
+.cc__face{position:absolute;inset:0;border-radius:18px;padding:22px 24px;color:#fff;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;
+  background:radial-gradient(120% 90% at var(--gx,20%) var(--gy,10%),rgba(255,214,160,.55),transparent 45%),linear-gradient(135deg,#2A201A 0%,#5A3B27 48%,#B9784A 100%);
+  box-shadow:0 30px 50px rgba(60,35,20,.28),inset 0 0 0 1px rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:space-between}
+.cc__face::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 7px);pointer-events:none}
+.cc__top{display:flex;justify-content:space-between;align-items:center}
+.cc__chip{width:44px;height:34px;border-radius:7px;background:linear-gradient(135deg,#F2D59A,#B98C4F);position:relative}
+.cc__chip::after{content:"";position:absolute;inset:7px 9px;border:1px solid rgba(80,50,20,.35);border-radius:3px}
+.cc__brand{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.cc__num{font-size:clamp(17px,2.2vw,21px);letter-spacing:.14em;font-variant-numeric:tabular-nums;text-shadow:0 1px 1px rgba(0,0,0,.35)}
+.cc__row{display:flex;justify-content:space-between;align-items:flex-end;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.cc__row small{display:block;font-size:9px;opacity:.6;margin-bottom:4px}
+.cc__row span{font-size:13px}
+.cc__back{transform:rotateY(180deg);padding:22px 0}
+.cc__stripe{height:44px;background:#14100D;margin-top:6px}
+.cc__sign{margin:18px 24px 0;height:40px;border-radius:4px;background:repeating-linear-gradient(90deg,#F3EAE0 0 6px,#E8DCCF 6px 12px);display:flex;align-items:center;justify-content:flex-end;padding-right:12px;color:#1E1915;font-size:14px;letter-spacing:.2em}
+.cc__back p{margin:14px 24px 0;font-size:9px;line-height:1.5;color:rgba(255,255,255,.55)}
+
+/* UPI */
+.upi-apps{display:flex;gap:10px;flex-wrap:wrap}
+.upi-qr{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:16px;border-radius:16px;background:#fff8;border:1px solid rgba(200,135,90,.2)}
+.upi-qr svg{width:120px;height:120px}
+
+/* OTP modal */
+.otp{position:fixed;inset:0;z-index:90;display:grid;place-items:center;background:rgba(30,25,21,.38);backdrop-filter:blur(5px);padding:20px}
+.otp__box{width:min(420px,100%);background:#FCF8F4;border-radius:24px;padding:30px;text-align:center;display:flex;flex-direction:column;gap:16px;box-shadow:0 40px 80px rgba(40,25,15,.25)}
+.otp__box h3{font-family:var(--font-display);font-weight:400;font-size:26px;text-transform:uppercase;color:var(--ink)}
+.otp__inputs{display:flex;justify-content:center;gap:8px}
+.otp__inputs input{width:46px;height:56px;border-radius:12px;border:1px solid #E6D4C5;background:#fff;text-align:center;font-size:22px;color:var(--ink);outline:none}
+.otp__inputs input:focus{border-color:var(--copper);box-shadow:0 0 0 4px rgba(200,135,90,.12)}
+.otp__err{font-size:12px;color:#B5472F;min-height:16px}
